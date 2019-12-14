@@ -35,7 +35,15 @@
     "dataSource": "db",
     "public": false
   },
-  "inmueble": {
+  "Inmueble": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Categoria": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Solicitud": {
     "dataSource": "db",
     "public": true
   }

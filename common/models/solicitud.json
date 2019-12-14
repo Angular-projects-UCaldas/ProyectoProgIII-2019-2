@@ -1,13 +1,21 @@
 {
-  "name": "Inmueble",
-  "plural": "Inmuebles",
+  "name": "Solicitud",
+  "plural": "Solicitudes",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "IDasesor": {
+    "IDsolicitud": {
+      "type": "string",
+      "required": true
+    },
+    "IDusuario": {
+      "type": "string",
+      "required": true
+    },
+    "IDvendedor":{
       "type": "string",
       "required": true
     },
@@ -15,27 +23,32 @@
       "type": "string",
       "required": true
     },
+    "TipoInmueble": {
+      "type": "string",
+      "required": true
+    },
+    "listadoSolicitudes": {
+      "type": [
+        "string"
+      ],
+      "required": true
+    },
+    "Fecha": {
+      "type": "date",
+      "required": true
+    },
     "Estado": {
       "type": "string",
       "required": true
     },
-    "Direccion": {
+    "Comentarios": {
       "type": "string",
       "required": true
     },
-    "Estrato": {
-      "type": "string",
-      "required": true
+    "Contrato": {
+      "type": "string"
     },
-    "Departamento": {
-      "type": "string",
-      "required": true
-    },
-    "Ciudad": {
-      "type": "string",
-      "required": true
-    },
-    "Categoria": {
+    "Foto": {
       "type": "string",
       "required": true
     }
