@@ -8,7 +8,11 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from '../app/templates/navbar/navbar.component';
 import { FooterComponent } from '../app/templates/footer/footer.component';
 import { HeroComponent } from '../app/templates/hero/hero.component';
-import { HomeComponent } from '../app/templates/home/home.component';
+import { UsersModule } from './modulos/users/users.module';
+import { PageNotFoundComponent } from './templates/page-not-found/page-not-found.component';
+
+//imports users
+
 
 @NgModule({
   declarations: [
@@ -16,11 +20,13 @@ import { HomeComponent } from '../app/templates/home/home.component';
     NavbarComponent,
     FooterComponent,
     HeroComponent,
-    HomeComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
+    UsersModule,
     AppRoutingModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
