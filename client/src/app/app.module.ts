@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { HttpClientModule } from '@angular/common/http'; 
 //imports templates
 import { NavbarComponent } from '../app/templates/navbar/navbar.component';
 import { FooterComponent } from '../app/templates/footer/footer.component';
@@ -25,7 +26,8 @@ import { PageNotFoundComponent } from './templates/page-not-found/page-not-found
   imports: [
     BrowserModule,
     UsersModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
     
   ],
   providers: [],

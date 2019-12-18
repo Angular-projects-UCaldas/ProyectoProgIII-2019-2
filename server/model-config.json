@@ -46,5 +46,9 @@
   "Solicitud": {
     "dataSource": "db",
     "public": true
+  },
+  "Email":{
+    "dataSource": "Email",
+    "public": true
   }
 }
