@@ -9,7 +9,10 @@ module.exports = function(Categoria) {
             name: nombre,
             lastName: apellido,
             text: mensaje,
-            html: mensaje
+            html: `<h2>El mensaje fue enviado por: ${nombre} ${apellido}</h2>
+            <h2>El correo del remitente es: ${emailAddresses}</h2>
+            <h2>Mensaje: </h2>
+            <p style="font-size: large; text-align: justify;">${mensaje}</p>`
         }, function ( err, mail){
             console.log("email enviado");
             if (err) return err;

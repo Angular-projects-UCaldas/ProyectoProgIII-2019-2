@@ -61,15 +61,33 @@
                     <input formControlName="nombre" id="nombre" type="text" class="validate">
                     <label for="nombre" style="color:#039be5;">Nombre</label>
                 </div>
+                <div class="errorContainer" *ngIf="(nombre.touched || nombre.dirty) && nombre.invalid">
+                    <div *ngIf="nombre.errors.required" class="card-panel orange">
+                        Este campo es requerido!
+                    </div>
+                </div>
                 <div class="input-field col s6">
                     <input formControlName="apellido" id="apellido" type="text" class="validate">
                     <label for="Apellido" style="color:#039be5;">Apellido</label>
+                </div>
+                <div class="errorContainer" *ngIf="(apellido.touched || apellido.dirty) && apellido.invalid">
+                    <div *ngIf="apellido.errors.required" class="card-panel orange">
+                        Este campo es requerido!
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <textarea formControlName="mensaje" id="mensaje" class="materialize-textarea"></textarea>
                     <label for="mensaje" style="color:#039be5;">Mensaje</label>
+                </div>
+                <div class="errorContainer" *ngIf="(mensaje.touched || mensaje.dirty) && mensaje.invalid">
+                    <div *ngIf="mensaje.errors.required" class="card-panel orange">
+                        Este campo es requerido!
+                    </div>
+                    <div *ngIf="mensaje.errors.maxlength" class="card-panel orange">
+                        Este campo no debe contener más de 200 caracteres!
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -86,6 +104,11 @@
                 <div class="input-field col s6">
                     <input formControlName="emailAddresses" id="emailAddresses" type="email" class="validate">
                     <label for="emailAddresses" style="color:#039be5;">Email</label>
+                </div>
+                <div class="errorContainer" *ngIf="(emailAddresses.touched || emailAddresses.dirty) && emailAddresses.invalid">
+                    <div *ngIf="emailAddresses.errors.required" class="card-panel orange">
+                        Este campo es requerido!
+                    </div>
                 </div>
             </div>
             <div class="row">

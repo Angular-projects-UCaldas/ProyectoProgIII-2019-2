@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CategoriaService } from 'src/app/services/categoria.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { EmailModel } from 'src/app/models/email.model';
+import { JsonpInterceptor } from '@angular/common/http';
 
 
 @Component({
@@ -20,14 +21,18 @@ export class HomeComponent implements OnInit {
 
   formGroupCreator(): FormGroup {
     return new FormGroup({
-      nombre: new FormControl(),
-      apellido: new FormControl(),
-      mensaje: new FormControl(),
-      asunto: new FormControl(),
-      emailAddresses: new FormControl()
+      nombre: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+      apellido: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+      mensaje: new FormControl('', [Validators.required, Validators.maxLength(200)]),
+      asunto: new FormControl('', [Validators.required]),
+      emailAddresses: new FormControl('', [Validators.required])
     });
   }
 
+  // guardarValores(){
+  //   localStorage.setItem("usuario", JSON.stringify( this.emailFormGroup.value));
+  //   console.log('entro')
+  // }
   get nombre() {
     return this.emailFormGroup.get('nombre');
   }
