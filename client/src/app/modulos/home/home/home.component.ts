@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from 'src/app/services/categoria.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { EmailModel } from 'src/app/models/email.model';
-import { JsonpInterceptor } from '@angular/common/http';
 
 
 @Component({

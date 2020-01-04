@@ -2,18 +2,26 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { UsersRoutingModule } from './users-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LogoutComponent } from './logout/logout.component';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, LogoutComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    RecaptchaModule
+
   ],
   exports:[
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
+  ], 
+  providers: [
   ]
 })
 export class UsersModule { }
