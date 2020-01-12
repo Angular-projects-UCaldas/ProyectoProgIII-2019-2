@@ -14,7 +14,8 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "db",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "db",
@@ -47,8 +48,13 @@
     "dataSource": "db",
     "public": true
   },
-  "Email":{
+  "Email": {
     "dataSource": "Email",
     "public": true
+  },
+  "user": {
+    "dataSource": "db",
+    "public": true,
+    "options": {}
   }
 }

@@ -24,9 +24,15 @@ export class NavbarComponent implements OnInit {
       this.userLogged = false;
     } else{
       this.userLogged = true;
-      this.userName = userInfo.name
+      this.userName = userInfo.name;
     }
   }
 
+  refresh(){
+    if (this.flag){
+      window.location.reload();
+      this.flag = false;
+    }
+  }
 
 }

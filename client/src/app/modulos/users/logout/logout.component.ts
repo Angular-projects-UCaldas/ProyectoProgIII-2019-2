@@ -9,8 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LogoutComponent implements OnInit {
 
-  flag : boolean = true;
-  
+ 
   constructor(private userService: UsuariosService, private router: Router) { }
 
   ngOnInit() {

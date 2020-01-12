@@ -15,7 +15,7 @@
       "type": "string",
       "required": true
     },
-    "IDvendedor":{
+    "IDvendedor": {
       "type": "string",
       "required": true
     },
