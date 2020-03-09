@@ -3,9 +3,8 @@ import { Observable } from 'rxjs';
 import { UserModel } from '../models/user.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { isNullOrUndefined } from 'util';
-import { EmailModel } from "../models/email.model";
 
-const base_url = "http://localhost:3000/api/Users/"
+const base_url = "http://localhost:3000/api/ExtUsers/"
 @Injectable({
   providedIn: 'root'
 })
@@ -28,6 +27,14 @@ export class UsuariosService {
     });
   }
 
+  userRegister(user: UserModel): Observable<UserModel> {
+    return this.http.post<UserModel>(`${base_url}`, user , {
+      headers: new HttpHeaders({
+        "content-type": "application/json"
+      })
+    });
+  }
+  
   logoutUser() {
     localStorage.removeItem('userToken');
     localStorage.removeItem('userInfo');
@@ -57,28 +64,15 @@ export class UsuariosService {
   }
 
   resetPassword(email: string): Observable<UserModel> {
-    return this.http.post<UserModel>(`${base_url}reset`, email, {
+    return this.http.post<UserModel>(`${base_url}reset`, 
+    {email: email}, 
+    {
       headers: new HttpHeaders({
         "content-type": "application/json"
       })
     });
   }
 
-  /*  resetPassword(email: EmailModel): Observable<EmailModel> {
-     return this.http.post<EmailModel>(`${base_url}reset`, email, {
-       headers: new HttpHeaders({
-         "content-type": "application/json"
-     })
-   });
- } */
-  /*   resetPassword(token: string, newPassword: string): Observable<UserModel> {
-      return this.http.post<UserModel>(`${base_url}reset-password?access_token=${token}`, { "newPassword": newPassword },
-        {
-          headers: new HttpHeaders({
-            "content-type": "application/json"
-          })
-        });
-    } */
 
   findUserEmail(email: string): Observable<UserModel> {
     return this.http.get<UserModel>(`${base_url}findOne?filter=`, {

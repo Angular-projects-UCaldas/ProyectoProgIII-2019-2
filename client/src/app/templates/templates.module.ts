@@ -4,6 +4,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeroComponent } from './hero/hero.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ConfirmaComponent } from './confirma/confirma.component';
+import { CorreoConfirmaComponent } from './correo-confirma/correo-confirma.component';
 
 
 
@@ -12,13 +14,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     NavbarComponent, 
     FooterComponent, 
     HeroComponent, 
-    PageNotFoundComponent
+    PageNotFoundComponent, 
+    ConfirmaComponent, 
+    CorreoConfirmaComponent
   ],
   imports: [
     CommonModule
   ],
   exports:[
-    
   ]
 })
 export class TemplatesModule { }

@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
       this.userLogged = false;
     } else{
       this.userLogged = true;
-      this.userName = userInfo.name;
+      this.userName = userInfo.username;
     }
   }
 

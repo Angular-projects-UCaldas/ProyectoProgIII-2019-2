@@ -19,7 +19,7 @@
   },
   "AccessToken": {
     "dataSource": "db",
-    "public": false
+    "public": true
   },
   "ACL": {
     "dataSource": "db",
@@ -52,9 +52,8 @@
     "dataSource": "Email",
     "public": true
   },
-  "user": {
+  "ExtUser": {
     "dataSource": "db",
-    "public": true,
-    "options": {}
+    "public": true
   }
 }

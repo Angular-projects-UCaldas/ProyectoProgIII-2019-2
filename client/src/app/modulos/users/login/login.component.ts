@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuarios.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,46 +14,51 @@ export class LoginComponent implements OnInit {
   email: string = "";
   password: string = "";
   recaptcha: string = "";
+  alertMessage: string;
 
-
-  constructor(private userService: UsuariosService) { }
+  constructor(private userService: UsuariosService, private router: Router) { }
 
 
   ngOnInit() {
 
-/*     var CryptoJS = require("crypto-js");
-
-    // Encrypt
-    var ciphertext = CryptoJS.AES.encrypt('my message', 'secret key 123');
-
-    // Decrypt
-    var bytes = CryptoJS.AES.decrypt(ciphertext.toString(), 'secret key 123');
-    var plaintext = bytes.toString(CryptoJS.enc.Utf8);
-
-    console.log(ciphertext,plaintext); */
+    /*     var CryptoJS = require("crypto-js");
+    
+        // Encrypt
+        var ciphertext = CryptoJS.AES.encrypt('my message', 'secret key 123');
+    
+        // Decrypt
+        var bytes = CryptoJS.AES.decrypt(ciphertext.toString(), 'secret key 123');
+        var plaintext = bytes.toString(CryptoJS.enc.Utf8);
+    
+        console.log(ciphertext,plaintext); */
   }
 
   onLogin(): void {
     this.userService.loginUser(this.email, this.password).subscribe(item => {
       //console.log(this.userService.getUserInformation());
-      this.userService.saveToken(item.id);
-      this.userService.saveUserInformation(item.user);
-      if (this.flag == true) {
-        this.flag = false;
-        window.location.reload();
+      if (item) {
+        let nuevoItem = JSON.parse(JSON.stringify(item));
+        this.userService.saveToken(nuevoItem.user.id);
+        this.userService.saveUserInformation(nuevoItem.user);
+        this.alertMessage = "Ha iniciado sesión correctamente";
+        this.router.navigate(['inmuebles/home-i']);
       }
-    });
+    }, error => {
+      this.alertMessage = "Ingrese los datos correctamente";
+      console.log(error.error.error.message);
+    }
+    );
   }
 
   resolved(captchaResponse: string) {
     this.recaptcha = captchaResponse;
     if (this.recaptcha.length > 0) { }
     //console.log(`Resolved captcha with response: ${captchaResponse}`);
-     /*   executeImportantAction(): void {
-      this.recaptcha.execute('onLogin')
-        .subscribe((token) => this.handleToken(token));
-    } */
+    /*   executeImportantAction(): void {
+     this.recaptcha.execute('onLogin')
+       .subscribe((token) => this.handleToken(token));
+   } */
   }
 
- 
+
 }

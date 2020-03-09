@@ -11,6 +11,8 @@ import { FooterComponent } from '../app/templates/footer/footer.component';
 import { HeroComponent } from '../app/templates/hero/hero.component';
 import { UsersModule } from './modulos/users/users.module';
 import { PageNotFoundComponent } from './templates/page-not-found/page-not-found.component';
+import { ConfirmaComponent } from './templates/confirma/confirma.component';
+import { CorreoConfirmaComponent } from "./templates/correo-confirma/correo-confirma.component";
 
 //imports users
 
@@ -21,7 +23,9 @@ import { PageNotFoundComponent } from './templates/page-not-found/page-not-found
     NavbarComponent,
     FooterComponent,
     HeroComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ConfirmaComponent,
+    CorreoConfirmaComponent
   ],
   imports: [
     BrowserModule,

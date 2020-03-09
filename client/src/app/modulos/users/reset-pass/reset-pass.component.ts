@@ -19,29 +19,28 @@ export class ResetPassComponent implements OnInit {
   ngOnInit() {
   }
 
+  recaptcha: string = "";
 
   resetPassword(email: string) {
-    this.userService.resetPassword(this.email).subscribe(item => {
-      console.log(item.id);
-    });
+    this.userService.resetPassword(this.email).subscribe(
+      response => {
+        if (response){
+          console.log("error en el servidor")
+        }
+    }, error =>{
+      console.log(error);
+    }
+    );
   }
 
-/*   resetPassword(email: string){
-   
-    let token = localStorage.getItem("userToken");
+  resolved(captchaResponse: string) {
+    this.recaptcha = captchaResponse;
+    if (this.recaptcha.length > 0) { }
+    //console.log(`Resolved captcha with response: ${captchaResponse}`);
+     /*   executeImportantAction(): void {
+      this.recaptcha.execute('onLogin')
+        .subscribe((token) => this.handleToken(token));
+    } */
+  }
 
-    return this.userService.resetPassword(token, this.password).subscribe(item => {
-      if (!isNullOrUndefined(item)) {
-        this.alertMessage = "Error en el servidor";
-        console.log(this.alertMessage);
-      } else {
-        this.alertMessage = "La contraseña se ha cambiado correctamente!!";
-        console.log(this.alertMessage);
-        this.router.navigate(['user/login']);       
-      }
-    }, err => {
-      var errorMessage = <any>err;
-      console.log(errorMessage);
-    });
-  } */
 }
