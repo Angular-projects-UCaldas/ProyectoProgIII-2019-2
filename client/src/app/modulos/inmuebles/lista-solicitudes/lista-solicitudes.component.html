@@ -2,10 +2,13 @@
     <table class="response-table">
         <thead>
             <th>
-                Nombre
+                Tipo Inmueble
             </th>
             <th>
-                ciudad
+                Comentarios
+            </th>
+            <th>
+                ID Asesor
             </th>
         </thead>
         <tbody>
@@ -21,12 +24,12 @@
                     {{s.IDvendedor}}
                 </td>
                 <td>
-                    <button class="btn light-blue darken-4" type="submit">Responder
+                    <button routerLink="/inmuebles/responder/solicitud/{{s.id}}" class="btn light-blue darken-4" type="submit">Responder
                     <i class="material-icons right">save</i>
                 </button>
                 </td>
                 <td>
-                    <button class="btn light-blue darken-4" type="submit">Rechazar
+                    <button routerLink="/inmuebles/borrar/solicitud/{{s.id}}" class="btn light-blue darken-4" type="submit">Rechazar
                     <i class="material-icons right">delete</i>
                 </button>
 

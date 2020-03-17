@@ -1,9 +1,9 @@
 <div class="container">
-    <div class="row s12">
+    <div class="row s12" id="card">
 
         <div *ngFor="let p of housesList" class="card  col s4">
             <div class="card-image">
-                <img src="{{p.LinkImage}}">
+                <img src="{{p.LinkImage}}" id="image">
                 <span class="card-title">{{p.Categoria}}</span>
             </div>
             <div class="card-content">
@@ -17,7 +17,7 @@
 
                 <a routerLink="/inmuebles/details/{{p.id}}">Detalles</a>
                 <a routerLink="/inmuebles/delete/{{p.id}}">Eliminar</a>
-                <a routerLink="/inmuebles/asesor/solicitudes/nueva/{{p.id}}">Solicitar</a>
+                <a routerLink="/inmuebles/solicitudes/nueva/{{p.id}}">Solicitar</a>
             </div>
         </div>
     </div>

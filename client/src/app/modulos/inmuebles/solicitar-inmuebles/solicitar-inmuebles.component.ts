@@ -109,7 +109,8 @@ export class SolicitarInmuebleComponent implements OnInit {
       TipoInmueble:this.inmueble.Tipo,
       Tipo:"nueva",  
       listadoSolicitudes:["2"],
-      IDsolicitud:"nueva2"
+      IDsolicitud:"nueva2",
+      email:this.userEmail
   
     }
     return soli;

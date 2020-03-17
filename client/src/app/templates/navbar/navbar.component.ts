@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
   constructor(private userService: UsuariosService) { }
   flag: boolean = true;
   userLogged: boolean;
-  userName: string = "";
+  userName: string;
 
   ngOnInit() {
     this.showMenu();
@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
       this.userLogged = false;
     } else{
       this.userLogged = true;
-      this.userName = userInfo.username;
+      this.userName = userInfo.name;
     }
   }
 

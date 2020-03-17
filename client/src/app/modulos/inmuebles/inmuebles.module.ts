@@ -9,10 +9,12 @@ import { DetalleProductosComponent } from './detalle-productos/detalle-productos
 import { SolicitarInmuebleComponent } from './solicitar-inmuebles/solicitar-inmuebles.component';
 import { DeleteInmuebleComponent } from './delete-inmueble/delete-inmueble.component';
 import { ListaSolicitudesComponent } from './lista-solicitudes/lista-solicitudes.component';
+import { ResponderSolicitudComponent } from './responder-solicitud/responder-solicitud.component';
+import { BorrarSolicitudComponent } from './borrar-solicitud/borrar-solicitud.component';
 
 
 @NgModule({
-  declarations: [HomeInmueblesComponent, CrearInmuebleComponent, DetalleProductosComponent, SolicitarInmuebleComponent, DeleteInmuebleComponent, ListaSolicitudesComponent],
+  declarations: [HomeInmueblesComponent, CrearInmuebleComponent, DetalleProductosComponent, SolicitarInmuebleComponent, DeleteInmuebleComponent, ListaSolicitudesComponent, ResponderSolicitudComponent, BorrarSolicitudComponent],
   imports: [
     CommonModule,
     InmueblesRoutingModule,

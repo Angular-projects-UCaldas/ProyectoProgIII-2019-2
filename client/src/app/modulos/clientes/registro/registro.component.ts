@@ -15,7 +15,7 @@ export class RegistroComponent implements OnInit {
 
   constructor(private userService: UsuariosService, private router: Router) { }
 
- 
+
   recaptcha: string = "";
 
   ngOnInit() {
@@ -26,14 +26,14 @@ export class RegistroComponent implements OnInit {
 
   formGroupCreator(): FormGroup {
     return new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
-      lastName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
-      phone: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
-      address: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
-      idNumber: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+      name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
+      lastName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
+      phone: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
+      address: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
+      idNumber: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
       type: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
     });
   }
   get name() {
@@ -60,32 +60,50 @@ export class RegistroComponent implements OnInit {
   get password() {
     return this.clientFormGroup.get('password');
   }
-  buildUserData():UserModel{
-    let userBuild :UserModel={
+
+  encriptar(string: string) {
+    /*var CryptoJS = require("crypto-js");
+
+    // Encrypt
+    var ciphertext = CryptoJS.AES.encrypt(string, 'secret key 123');
+    return ciphertext.toString()
+
+    
+    // Decrypt
+    var bytes = CryptoJS.AES.decrypt(ciphertext.toString(), 'secret key 123');
+    var plaintext = bytes.toString(CryptoJS.enc.Utf8);
+
+    console.log(ciphertext, plaintext);*/
+  }
+  buildUserData(): UserModel {
+    let userBuild: UserModel = {
       name: this.name.value,
       password: this.password.value,
       email: this.email.value,
-      lastName:this.lastName.value,
-      phone:this.phone.value,
-      address:this.address.value,
-      idNumber:this.idNumber.value,
-      type:this.type.value
+      lastName: this.lastName.value,
+      phone: this.phone.value,
+      address: this.address.value,
+      idNumber: this.idNumber.value,
+      type: this.type.value,
+      rol:0
     }
     return userBuild;
-  
+
   }
 
-  saveNewClient():void{
-    if(this.clientFormGroup.valid){
+  saveNewClient(): void {
+    if (this.clientFormGroup.valid) {
       let user = this.buildUserData();
-        this.userService.userRegister(user).subscribe(item => {
-          console.log(item);
-        });
+      this.userService.userRegister(user).subscribe(item => {
+        console.log(item);
+      }, error => {
+        console.log(error)
+      });
       this.router.navigate(['confirma']);
       setTimeout(() => {
         this.router.navigate(["/home"]);
       }, 1000);
-    }else{
+    } else {
       console.log('error')
     }
   }
@@ -94,10 +112,10 @@ export class RegistroComponent implements OnInit {
     this.recaptcha = captchaResponse;
     if (this.recaptcha.length > 0) { }
     //console.log(`Resolved captcha with response: ${captchaResponse}`);
-     /*   executeImportantAction(): void {
-      this.recaptcha.execute('onLogin')
-        .subscribe((token) => this.handleToken(token));
-    } */
+    /*   executeImportantAction(): void {
+     this.recaptcha.execute('onLogin')
+       .subscribe((token) => this.handleToken(token));
+   } */
   }
 
 }

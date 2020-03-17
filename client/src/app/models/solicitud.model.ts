@@ -10,6 +10,7 @@ export interface SolicitudModel{
     Foto:string,
     IDinmueble:string,
     listadoSolicitudes:[string],
-    IDsolicitud:string
+    IDsolicitud:string,
+    email:string
 
 }

@@ -105,7 +105,8 @@
                     <input formControlName="emailAddresses" id="emailAddresses" type="email" class="validate">
                     <label for="emailAddresses" style="color:#039be5;">Email</label>
                 </div>
-                <div class="errorContainer" *ngIf="(emailAddresses.touched || emailAddresses.dirty) && emailAddresses.invalid">
+                <div class="errorContainer"
+                    *ngIf="(emailAddresses.touched || emailAddresses.dirty) && emailAddresses.invalid">
                     <div *ngIf="emailAddresses.errors.required" class="card-panel orange">
                         Este campo es requerido!
                     </div>
@@ -118,6 +119,17 @@
                         <i class="material-icons right">send</i>
                     </button>
                 </div>
+                <div *ngIf="alertMessage">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <div class="card black darken-1">
+                                    <div class="card-content white-text">
+                                        <p>{{ alertMessage }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </form>
     </div>

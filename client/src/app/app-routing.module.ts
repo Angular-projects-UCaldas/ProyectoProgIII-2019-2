@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './templates/page-not-found/page-not-found
 import { ConfirmaComponent } from './templates/confirma/confirma.component';
 import { InmueblesModule } from './modulos/inmuebles/inmuebles.module';
 import { CorreoConfirmaComponent } from "./templates/correo-confirma/correo-confirma.component";
+import { AdministradorModule } from './modulos/administrador/administrador.module';
 
 
 const routes: Routes = [
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'inmuebles',
     loadChildren: './modulos/inmuebles/inmuebles.module#InmueblesModule'
+  },
+  {
+    path: 'administrador',
+    loadChildren: './modulos/administrador/administrador.module#AdministradorModule'
   },
   {
     path: '',
@@ -44,7 +49,8 @@ const routes: Routes = [
     UsersModule,
     HomeModule, 
     ClientesModule,
-    InmueblesModule
+    InmueblesModule,
+    AdministradorModule
   ],
   exports: [RouterModule]
 })

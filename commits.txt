@@ -1,0 +1,53 @@
+commit 45846088e1c756847e37335ecc4ad8f5b1d10ce8
+Author: LucasBMax <lucas.1701716343@gmail.com>
+Date:   Sun Mar 8 22:57:21 2020 -0500
+
+    Register, Inmuebles
+
+commit 0f1cde4b5e680064f82e6f9edc601ffca3f572e0
+Author: LucasBMax <lucas.1701716343@gmail.com>
+Date:   Sat Jan 11 23:03:13 2020 -0500
+
+    reset password
+
+commit ee7bbe71f83855bc36970ae9cd600ac58293c2c4
+Author: LucasBMax <lucas.1701716343@gmail.com>
+Date:   Fri Jan 3 22:50:49 2020 -0500
+
+    login and recaptcha
+
+commit 9fbd970fc1144bff235d620f6c1bbe84650669a3
+Author: LucasBMax <lucas.1701716343@gmail.com>
+Date:   Fri Dec 20 00:52:34 2019 -0500
+
+    Validators
+
+commit 70709c53005856e6d4fa695c7089c8aa1225876e
+Author: LucasBMax <lucas.1701716343@gmail.com>
+Date:   Wed Dec 18 02:28:01 2019 -0500
+
+    send mail
+
+commit 28bb9b3982703d93e5564ab39497c4cf5a60fa40
+Author: LucasBMax <lucas.1701716343@gmail.com>
+Date:   Wed Dec 18 02:18:23 2019 -0500
+
+    form send mail
+
+commit 1efa2864c1bac59c58071deb7c03921415f48993
+Author: LucasBMax <lucas.1701716343@gmail.com>
+Date:   Sun Dec 15 01:35:20 2019 -0500
+
+    login and pageNotFound
+
+commit b8700265207fc60856156a9ebc8738556fdac78e
+Author: LucasBMax <lucas.1701716343@gmail.com>
+Date:   Sat Dec 14 02:00:12 2019 -0500
+
+    templates and models
+
+commit 20ea072b38e0c592ce9197bc1336f98b512ed1e0
+Author: LucasBMax <lucas.1701716343@gmail.com>
+Date:   Thu Dec 12 00:03:14 2019 -0500
+
+    Incial

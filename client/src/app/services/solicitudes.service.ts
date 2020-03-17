@@ -15,5 +15,12 @@ export class SolicitudesService {
   getAllSolicitudes():Observable<SolicitudModel[]>{
     return this.http.get<SolicitudModel[]>(`${base_url}Solicitudes`)
   }
+
+  getSolisById(solId:string):Observable<SolicitudModel>{
+    return this.http.get<SolicitudModel>(`${base_url}Solicitudes/${solId}`)
+  }
+  deleteSoli(soliId:string):Observable<SolicitudModel>{
+    return this.http.delete<SolicitudModel>(`${base_url}Solicitudes/${soliId}`)
+  }
   
 }

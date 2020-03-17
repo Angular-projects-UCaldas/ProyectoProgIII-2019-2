@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
   constructor(private catService: CategoriaService) {
     this.emailFormGroup = this.formGroupCreator();
   }
-
+  alertMessage: string;
+  valido: boolean = false;
   emailFormGroup: FormGroup;
 
   formGroupCreator(): FormGroup {
@@ -62,9 +63,12 @@ export class HomeComponent implements OnInit {
   // }
 
   sendMail(): void {
-    let email = this.emailFormGroup;
     this.catService.sendMail(this.buildEmailData()).subscribe(items => {
-      console.log(items);
+      this.valido = true;
+      this.alertMessage = "El correo ha sido enviado"
+    }, error => {
+      this.alertMessage = "Error al enviar el correo"
+        console.log(this.alertMessage)
     });
   }
 

@@ -13,6 +13,9 @@ import { UsersModule } from './modulos/users/users.module';
 import { PageNotFoundComponent } from './templates/page-not-found/page-not-found.component';
 import { ConfirmaComponent } from './templates/confirma/confirma.component';
 import { CorreoConfirmaComponent } from "./templates/correo-confirma/correo-confirma.component";
+import { FormsModule } from '@angular/forms';
+import { EditarComponent } from './modulos/administrador/editar/editar.component';
+import { AdministradorModule } from './modulos/administrador/administrador.module';
 
 //imports users
 
@@ -25,13 +28,15 @@ import { CorreoConfirmaComponent } from "./templates/correo-confirma/correo-conf
     HeroComponent,
     PageNotFoundComponent,
     ConfirmaComponent,
-    CorreoConfirmaComponent
+    CorreoConfirmaComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,
     UsersModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
     
   ],
   providers: [],
